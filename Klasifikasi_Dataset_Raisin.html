@@ -597,7 +597,7 @@ Requirement already satisfied: et-xmlfile in /usr/local/lib/python3.10/dist-pack
 <li><p>Maksimum: Ini adalah nilai terbesar yang ada dalam dataset untuk setiap variabel. Ini memberi Anda gambaran tentang rentang nilai yang mungkin untuk setiap variabel.</p></li>
 </ol>
 <p>Berikut ini adalah perhitungan manual dalam excel</p>
-<img src="MANUAL.png" width="" align="" /><p>b. PERHITUNGAN MENGGUNAKAN PYTHON</p>
+<img src="_images/MANUAL.png" width="" align="" /><p>b. PERHITUNGAN MENGGUNAKAN PYTHON</p>
 <p>Untuk mempermudah perhitungan ini, kita dapat menggunakan library pandas dalam Python. Dengan menggunakan kode ini, kita dapat dengan cepat mendapatkan ringkasan statistik dari dataset yang penting untuk analisis lebih lanjut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -982,16 +982,16 @@ Requirement already satisfied: et-xmlfile in /usr/local/lib/python3.10/dist-pack
 <li><p>Persiapkan Data</p></li>
 </ol>
 <p>Langkah pertama dalam menghitung Local Outlier Factor (LOF) secara manual adalah menyiapkan data. Dalam contoh ini, kita menggunakan data dengan tujuh fitur numerik untuk masing-masing titik data. Misalnya, kita memilih 10 titik data untuk mempermudah perhitungan manual.</p>
-<img src="datalof.png" width="" align="" /><ol class="arabic simple" start="2">
+<img src="_images/datalof.png" width="" align="" /><ol class="arabic simple" start="2">
 <li><p>Menghitung jarak dan menentukan K-NEIGHBOUR</p></li>
 </ol>
 <p>Langkah berikutnya adalah menghitung jarak antara setiap pasangan titik data menggunakan metode jarak Manhattan, yang sering digunakan dalam analisis data untuk mengukur jarak antara titik-titik dalam ruang fitur. Jarak Manhattan dihitung sebagai jumlah dari selisih absolut antara nilai-nilai fitur dari dua titik data. Jarak Manhattan antara dua titik data 𝑥 dan 𝑦 dihitung menggunakan rumus berikut:</p>
 <div class="math notranslate nohighlight">
 \[d(x,y) = \sum_{i=1}^{n}(|x_i - y_i|)\]</div>
 <p>Berikut adalah hasil perhitungan jarak menggunakan rumus Manhattan distance dalam Microsoft Excel.</p>
-<img src="jaraklof-20240619-134544.png" width="" align="" /><p>Setelah mendapatkan hasil perhitungan jarak dengan menggunakan rumus Manhattan, langkah selanjutnya adalah melakukan peringkat (ranking) berdasarkan nilai jarak yang dihasilkan. Kita akan memilih dua tetangga terdekat berdasarkan peringkat ini. Dalam hal ini, kita menetapkan
+<img src="_images/jaraklof-20240619-134544.png" width="" align="" /><p>Setelah mendapatkan hasil perhitungan jarak dengan menggunakan rumus Manhattan, langkah selanjutnya adalah melakukan peringkat (ranking) berdasarkan nilai jarak yang dihasilkan. Kita akan memilih dua tetangga terdekat berdasarkan peringkat ini. Dalam hal ini, kita menetapkan
 𝑘 =2, jadi kita akan memilih 2 tetangga terdekat.</p>
-<img src="manhattan.png" width="" align="" /><ol class="arabic simple" start="3">
+<img src="_images/manhattan.png" width="" align="" /><ol class="arabic simple" start="3">
 <li><p>Menghitung  REACHABILITY DENSITY (RD) dan LOCAL REACHABILITY DENSITY(LRD)</p></li>
 </ol>
 <p>Setelah menentukan k-neighbors untuk setiap titik data berdasarkan jarak Manhattan, langkah berikutnya adalah menghitung:</p>
@@ -1010,7 +1010,7 @@ Requirement already satisfied: et-xmlfile in /usr/local/lib/python3.10/dist-pack
 \text{lrd}_k(x) = \frac{|N_k(x)|}{\sum_{y \in N_k(x)} \text{reachdist}_k(x,y)}
 \]</div>
 <p>Berikut adalah hasil perhitungan lrd</p>
-<img src="Screenshot 2024-06-19 204810.png" width="" align="" /><ol class="arabic simple" start="4">
+<img src="_images/Screenshot 2024-06-19 204810.png" width="" align="" /><ol class="arabic simple" start="4">
 <li><p>Menghitung  LOCAL OUTLIER FACTOR (LOF)</p></li>
 </ol>
 <p>Langkah terakhir adalah menghitung LOF untuk setiap titik data menggunakan nilai LRD yang telah dihitung sebelumnya. LOF untuk titik data
@@ -1020,7 +1020,7 @@ Requirement already satisfied: et-xmlfile in /usr/local/lib/python3.10/dist-pack
 \text{lof}_k(x) = \frac{\sum_{y \in N_k(x)} \text{lrd}_k(y)}{|N_k(x)| \times \text{lrd}_k(x)}
 \]</div>
 <p>Setelah menghitung LOF untuk setiap titik data, Anda dapat menyusun peringkat dari nilai LOF tersebut. Titik data dengan nilai LOF tertinggi dianggap sebagai outlier atau anomali, karena mereka memiliki nilai LOF yang tinggi dibandingkan dengan tetangga-tetangga mereka. Berikut adalah hasilnya</p>
-<img src="Screenshot 2024-06-19 204850.png" width="" align="" /></section>
+<img src="_images/Screenshot 2024-06-19 204850.png" width="" align="" /></section>
 <section id="perhitungan-local-outlier-factor-lof-menggunakan-python">
 <h3>PERHITUNGAN  LOCAL OUTLIER FACTOR (LOF) MENGGUNAKAN PYTHON<a class="headerlink" href="#perhitungan-local-outlier-factor-lof-menggunakan-python" title="Link to this heading">#</a></h3>
 <p>Untuk perhitungan LOF menggunakan Python, kita bisa menggunakan library scikit-learn. Ini mempermudah dan mempercepat proses deteksi outliers. Berikut adalah kode untuk menghitung LOF:</p>
@@ -2199,7 +2199,7 @@ Confusion Matrix :
 <div class="math notranslate nohighlight">
 \[ P(A) = \frac{total \ data}{jumlah \ data\  dengan \ kelas \ A} \]</div>
 <p>Berikut adalah hasil perhitunggannya</p>
-<img src="probabilitas.png" width="" align="" /><ol class="arabic simple" start="3">
+<img src="_images/probabilitas.png" width="" align="" /><ol class="arabic simple" start="3">
 <li><p>Menghitung MEAN dari Fitur Setiap Kelas</p></li>
 </ol>
 <p>Setelah menghitung probabilitas prior, langkah berikutnya adalah menghitung rata-rata nilai fitur untuk setiap kelas.</p>
@@ -2207,14 +2207,14 @@ Confusion Matrix :
 <div class="math notranslate nohighlight">
 \[ μ A,X1 = \frac{∑ nilai \ fitur \ X1 \ pada \ kelas \ A}{jumlah \ data\  dengan \ kelas \ A} \]</div>
 <p>untuk di Microsoft Excel bisa menggunakan fitur AVERAGE, berikut ini hasil perhitungnna nya</p>
-<img src="mean.png" width="" align="" /><ol class="arabic simple" start="4">
+<img src="_images/mean.png" width="" align="" /><ol class="arabic simple" start="4">
 <li><p>Menghitung VARIAN dari Fitur Setiap Kelas</p></li>
 </ol>
 <p>Selain rata-rata, kita juga perlu menghitung varians nilai fitur untuk setiap kelas. Varians ini memberikan informasi tentang sebaran nilai fitur di dalam setiap kelas.</p>
 <div class="math notranslate nohighlight">
 \[σ^2 A,X1 = \frac{∑(nilai \ fitur \ X1 - μ A,X1)^2}{jumlah \ data\  dengan \ kelas \ A} \]</div>
 <p>untuk di Microsoft Excel bisa menggunakan fitur VAR, berikut ini hasil perhitungn nya</p>
-<img src="variasi.png" width="" align="" /><ol class="arabic simple" start="5">
+<img src="_images/variasi.png" width="" align="" /><ol class="arabic simple" start="5">
 <li><p>Hitung Probabilitas Tiap Kelas Dengan Inputan Data baru</p></li>
 </ol>
 <p>Setelah memiliki probabilitas prior, rata-rata, dan varians untuk setiap kelas dan fitur, kita dapat menggunakan rumus Gaussian Naive Bayes untuk menghitung probabilitas kelas dari data baru.</p>
@@ -2235,10 +2235,10 @@ Confusion Matrix :
 <li><p>P(H) adalah probabilitas prior dari kelas H.</p></li>
 </ul>
 <p>berikut ini hasil perhitungannya</p>
-<img src="inputan.png" width="" align="" /><ol class="arabic simple" start="6">
+<img src="_images/inputan.png" width="" align="" /><ol class="arabic simple" start="6">
 <li><p>Klasifikasi Hasil Akhir dan Perankingan</p></li>
 </ol>
-<img src="hasilakhir.png" width="" align="" /><p>Hasil akhir dari klasifikasi dilakukan dengan mengalikan probabilitas prior kelas dengan nilai probabilitas dari masing-masing fitur, kemudian diurutkan berdasarkan nilai tertinggi untuk mendapatkan kelas yang diprediksi paling mungkin. Pada hasil diatas yang tertinggi adalah kelas BESNI dengan nilai probabilitas sebesar 8,7561515568</p>
+<img src="_images/hasilakhir.png" width="" align="" /><p>Hasil akhir dari klasifikasi dilakukan dengan mengalikan probabilitas prior kelas dengan nilai probabilitas dari masing-masing fitur, kemudian diurutkan berdasarkan nilai tertinggi untuk mendapatkan kelas yang diprediksi paling mungkin. Pada hasil diatas yang tertinggi adalah kelas BESNI dengan nilai probabilitas sebesar 8,7561515568</p>
 </section>
 <section id="perhitungan-naive-bayes-menggunakan-python">
 <h3>PERHITUNGAN NAIVE BAYES MENGGUNAKAN PYTHON<a class="headerlink" href="#perhitungan-naive-bayes-menggunakan-python" title="Link to this heading">#</a></h3>
@@ -2278,7 +2278,7 @@ Confusion Matrix :
 <p>    Stacking adalah sebuah metode dimana sebuah model ditraining untuk menggabungkan beberapa individual model yang disebut <em>first-level learner</em>, sedangkan yang digabungkan disebut <em>second-level learner</em> atau <em>meta-learner</em>.</p>
 <p>    Stacking melibatkan dua atau lebih <em>base learner</em> atau model dasar sebagai model level-1, dan meta-learner yang menggabungkan prediksi base learner disebut sebagai level-2. Model yang berbeda digunakan oleh base learner untuk belajar dari suatu dataset. Output dari masing-masing model base learner dikumpulkan untuk membuat dataset baru. Di dalam dataset yang baru, setiap sampel berhubungan dengan nilai pada dataset awal yang seharusnya diprediksi. Selanjutnya dataset tersebut digunakan oleh model meta-learner hingga mendapatkan hasil akhir.</p>
 <p>     Dimana jika kita kita memvisualisasi menggunakan diagram sebagai berikut:</p>
-<img src="image-20240619-164733.png" width="" align="" /><p>Deskripsi :</p>
+<img src="_images/image-20240619-164733.png" width="" align="" /><p>Deskripsi :</p>
 <ol class="arabic simple">
 <li><p>First-level Learner</p></li>
 <li><p>Data set baru yang dihasilkan dari hasil pembelajaran first-level Learner</p></li>
@@ -2857,7 +2857,7 @@ Accuracy: 0.83 (+/- 0.03) [StackingClassifier]
 <p>    setiap model dilatih pada dataset yang diacak dari data yang diambil sampelnya,  data individual dapat dipilih lebih dari satu kali. data acak ini dikenal sebagai sampel bootstrap. Dengan melatih model pada bootstrap yang berbeda, bagging mengurangi varians dari masing-masing model. Bagging juga dapat menghindari overfitting.</p>
 <p>    Prediksi dari semua model yang diambil sampelnya kemudian digabungkan dan dibuat voting yang dimana hasil prediksi terbanyak akan di keluarkan sebagai hasil prediksi akhir</p>
 <p>    Bagging sangat efektif dalam mengurangi varians dan overfitting, membuat model lebih tangguh dan akurat, terutama dalam kasus di mana masing-masing model rentan terhadap variabilitas tinggi.</p>
-<img src="image-20240619-201514.png" width="" align="" /></section>
+<img src="_images/image-20240619-201514.png" width="" align="" /></section>
 <section id="percobaan-metode-bagging">
 <h3>PERCOBAAN METODE BAGGING<a class="headerlink" href="#percobaan-metode-bagging" title="Link to this heading">#</a></h3>
 </section>
@@ -3121,7 +3121,7 @@ dan hasil prediksi dari model tersebut <strong>adalah Kecimen</strong></p>
 <li><p>lalu kita juga akan membuat route untuk url /dashboard dan memiliki method untuk GET dan POST yang kita gunakan untuk menerima request POST dari user</p></li>
 </ol>
 <p>dan dilanjutkan untuk membuat halaman dashboard yang dimana halaman untuk kita implentasi model yang sudah kita buat</p>
-<img src="image-20240620-164227.png" width="" align="" /><p>Lalu kita akan membuat fungsi dashboard() yang dimana kita gunakan untuk menambilkan halaman dashboard (perhitungan) dengan file dashboard html, untuk code bisa dilihat disini : <a class="github reference external" href="https://github.com/Boinkkk/Data-Mining/blob/main/templates/dashboard.html">Boinkkk/Data-Mining</a></p>
+<img src="_images/image-20240620-164227.png" width="" align="" /><p>Lalu kita akan membuat fungsi dashboard() yang dimana kita gunakan untuk menambilkan halaman dashboard (perhitungan) dengan file dashboard html, untuk code bisa dilihat disini : <a class="github reference external" href="https://github.com/Boinkkk/Data-Mining/blob/main/templates/dashboard.html">Boinkkk/Data-Mining</a></p>
 <p>request.method == “GET” dijalankan saat ada request masuk dari url dan akan menampilkan dashboard.html
 request.method == “POST” dijalankan saat ada request masuk dari form yang bermethod POST
 request.form.get() itu berfungsi untuk mengambil value input dari element input yang bernama sesuai dengan parameter</p>
@@ -3129,15 +3129,15 @@ request.form.get() itu berfungsi untuk mengambil value input dari element input 
 <p>sebelum kita melakukan prediksi kita akan load model yang telah kita buat ada 2 yaitu model untuk preprocessing dan untuk prediksi. yang dimana pada bagian pc.load (open(’<em>nama_fille</em>’ , rb))</p>
 <p>setelah kita melakukan load kita akan preprocessing dulu datanya menggunakan model preprocessing tadi
 lalu setelah kita melakukan preprocessing kita akan prediksi data tersebut menggunakan model classifer yang telah kita buat. dan kita akan tampilkan hasil tersebut ke dashboard</p>
-<img src="image-20240620-170341.png" width="" align="" /><p>Lalu untuk run aplikasi bisa menggunakan kode berikut dan dapat diakses melalui localhost</p>
-<img src="image-20240620-171639.png" width="" align="" /><p>Agar website kita bisa diakses melalui internet kita bisa hosting website kita di <a class="reference external" href="http://www.pythonanywhere.com">www.pythonanywhere.com</a> secara gratis, pencet tombol ‘Start running python online in less than a minute! -&gt;’</p>
-<img src="image-20240620-172229.png" width="" align="" /><p>lalu kita akan tekan tombol create a Beginner acount</p>
-<img src="image-20240620-172431.png" width="" align="" /><p>Lalu kita isi form sesuai dengan apa yang kita mau untuk proses regitrasi</p>
-<img src="image-20240620-172636.png" width="" align="" /><p>pada bagian dashboard kita akan pergi ke files dan kita akan upload semua file python kita bagian my/site</p>
-<img src="image-20240620-173113.png" width="" align="" /><img src="image-20240620-173554.png" width="" align="" /><p>Pada bagian yang sama kita akan open terminal bash, yang ada di Open Bash console here lalu dalam terminal kita akan membuat env untuk project kita dan kita akan instal library yang diperlukan yaitu Flask, scikit learn, pickle, pandas, dan numpy.</p>
+<img src="_images/image-20240620-170341.png" width="" align="" /><p>Lalu untuk run aplikasi bisa menggunakan kode berikut dan dapat diakses melalui localhost</p>
+<img src="_images/image-20240620-171639.png" width="" align="" /><p>Agar website kita bisa diakses melalui internet kita bisa hosting website kita di <a class="reference external" href="http://www.pythonanywhere.com">www.pythonanywhere.com</a> secara gratis, pencet tombol ‘Start running python online in less than a minute! -&gt;’</p>
+<img src="_images/image-20240620-172229.png" width="" align="" /><p>lalu kita akan tekan tombol create a Beginner acount</p>
+<img src="_images/image-20240620-172431.png" width="" align="" /><p>Lalu kita isi form sesuai dengan apa yang kita mau untuk proses regitrasi</p>
+<img src="_images/image-20240620-172636.png" width="" align="" /><p>pada bagian dashboard kita akan pergi ke files dan kita akan upload semua file python kita bagian my/site</p>
+<img src="_images/image-20240620-173113.png" width="" align="" /><img src="_images/image-20240620-173554.png" width="" align="" /><p>Pada bagian yang sama kita akan open terminal bash, yang ada di Open Bash console here lalu dalam terminal kita akan membuat env untuk project kita dan kita akan instal library yang diperlukan yaitu Flask, scikit learn, pickle, pandas, dan numpy.</p>
 <p>lalu kita akan mengganti path untuk website menuju bagian mysite/ yang telah kita buat, bagian code bagian working directory ganti ke path tersebut lalu kita akan reload <a class="reference external" href="http://pemdat.pythonanywhere.com">pemdat.pythonanywhere.com</a></p>
-<img src="image-20240620-174017.png" width="" align="" /><p>dan selesai! website kita bisa diakses pada halaman di configuration for <a class="reference external" href="https://pemdat.pythonanywhere.com/">https://pemdat.pythonanywhere.com/</a></p>
-<img src="image-20240620-174338.png" width="" align="" /><img src="image-20240620-174352.png" width="" align="" /><a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=6bead952-67ac-41df-b703-fa12af55157a' target="_blank">
+<img src="_images/image-20240620-174017.png" width="" align="" /><p>dan selesai! website kita bisa diakses pada halaman di configuration for <a class="reference external" href="https://pemdat.pythonanywhere.com/">https://pemdat.pythonanywhere.com/</a></p>
+<img src="_images/image-20240620-174338.png" width="" align="" /><img src="_images/image-20240620-174352.png" width="" align="" /><a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=6bead952-67ac-41df-b703-fa12af55157a' target="_blank">
 <img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
 Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
 </section>
